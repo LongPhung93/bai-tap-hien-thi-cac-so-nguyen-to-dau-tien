@@ -8,19 +8,29 @@
 <!--Hiển thị 20 số nguyên tố đầu tiên.-->
 <script !src="">
     let num = parseInt(prompt('Nhập số lượng số nguyên tố cần in ra:'));
-    let count;
-    let N = 2;
+    let count = 0;
+    let a=0;
 
-        document.write(2 + "<br>");
-        for (count=0; count< (num-1);) {
-            for ( i = 1; i < N; i++) {
-                if (N % i == 0) {
-                    N++;
+    while (count < num) {
+        let kt;
+        if (a < 2) {
+            kt = false;
+        } else {
+            for (let i = 2; i < a; i++) {
+                if (a % i == 0) {
+                    kt = false;
                 }
             }
-            document.write(N +"<br>");
-            debugger
+        }
+        if (kt == false) {
+            // alert('Không là số nguyên tố');
+            a++;
+        } else {
+            // alert('Là số nguyên tố');
+            document.write(a + ",");
             count++;
+            a++;
+        }
     }
 </script>
 </body>
